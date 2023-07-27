@@ -99,3 +99,67 @@ function onInput(evt) {
     helloName.textContent = typeName;
   }
 }
+
+// Task 6
+
+const checkName = document.querySelector(".js-check");
+checkName.addEventListener("blur", symbols);
+const checkValid = document.getElementById("validation-input");
+const perfectName = parseInt(checkValid.getAttribute("data-length"));
+
+function symbols(evt) {
+  let inputName = evt.currentTarget.value;
+  if (inputName.length === perfectName) {
+    checkValid.classList.add("valid");
+  } else {
+    checkValid.classList.add("invalid");
+  }
+}
+
+// Task 7
+
+const controlSize = document.getElementById("font-size-control");
+controlSize.addEventListener("input", size);
+const textSize = document.getElementById("text");
+
+function size(evt) {
+  const newSize = controlSize.value + "px";
+  textSize.style.fontSize = newSize;
+}
+
+// Task 8
+
+const form = document.querySelector(".login-form");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+
+  if (email.value === "" || password.value === "") {
+    return console.log("Please fill in all the fields!");
+  }
+
+  console.log(`Login: ${email.value}, Password: ${password.value}`);
+  event.currentTarget.reset();
+}
+
+// Task 9
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+const currentCol = document.querySelector(".color");
+const randomCol = document.querySelector(".change-color");
+
+randomCol.addEventListener("click", change);
+function change(event) {
+  const newColor = getRandomHexColor();
+  document.body.style.backgroundColor = newColor;
+}

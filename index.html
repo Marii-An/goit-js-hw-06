@@ -50,6 +50,31 @@
       placeholder="Please enter your name"
     />
     <h1>Hello, <span class="js-output" id="name-output">Anonymous</span>!</h1>
+    <input
+      class="js-check"
+      type="text"
+      id="validation-input"
+      data-length="6"
+      placeholder="Please enter 6 symbols"
+    />
+    <input id="font-size-control" type="range" min="16" max="96" />
+    <br />
+    <span id="text">Abracadabra!</span>
+    <form class="login-form">
+      <label>
+        Email
+        <input type="email" name="email" />
+      </label>
+      <label>
+        Password
+        <input type="password" name="password" />
+      </label>
+      <button type="submit">Login</button>
+    </form>
+    <div class="widget">
+      <p>Background color: <span class="color">-</span></p>
+      <button type="button" class="change-color">Change color</button>
+    </div>
     <script src="./js/script.js"></script>
   </body>
 </html>
