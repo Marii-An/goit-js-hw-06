@@ -86,6 +86,7 @@ plusButton.addEventListener("click", () => {
 });
 
 // Task 5
+
 const userName = document.querySelector(".js-input");
 const helloName = document.querySelector(".js-output");
 
@@ -162,4 +163,5 @@ randomCol.addEventListener("click", change);
 function change(event) {
   const newColor = getRandomHexColor();
   document.body.style.backgroundColor = newColor;
+  currentCol.textContent = newColor;
 }
